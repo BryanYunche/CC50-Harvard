@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <cs50.h>
 
-//O program recriará uma piramide
+//O program recriará uma piramide dupla
 //O usuário deverá escolher o tamanho da piramide entre 1 e 8 de altura
 //O programa não aceita valores negativos, não aceita 0 e valores maiores que 8
 //O usuário perguntará novamente a altura da pirâmide sempre que o usuário der uma entrada invalida
 
 //Funções "resumidas"
 int pega_altura(void);
-void construir_piramide(int altura);
+void construir_piramide_dupla(int medida);
 
 
 int main(void)
 {
 
 int i = pega_altura();
-construir_piramide(i);
+construir_piramide_dupla(i);
 
 }
 
@@ -39,7 +39,7 @@ int pega_altura(void)
 }
 
 //Criação da pirâmide
-void construir_piramide(int medida)
+void construir_piramide_dupla(int medida)
 {
 int linha, coluna, espaco, dimensao;
 dimensao = medida;
@@ -57,7 +57,14 @@ for (linha = 1; linha <= dimensao; linha++)
     
     for (coluna = 1; coluna <= linha ; coluna++)
     {
-       printf("#"); 
+       printf("#");
+    }
+    
+    printf(" ");
+    
+    for (coluna = 1; coluna <= linha ; coluna++)
+    {
+       printf("#");
     }
     printf("\n");
 }
